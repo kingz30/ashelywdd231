@@ -1,0 +1,35 @@
+@media (min-width: 768px) {
+  .site-header { padding: 1rem 2rem; box-shadow: var(--shadow-md) }
+  .menu-toggle { display: none }
+  .site-nav ul { display: flex; gap: 1.5rem }
+  .site-nav a { border-radius: 8px; padding: 0.5rem 1rem; transition: all 0.2s }
+  .site-nav a:hover { background: #f0f3f9; color: var(--primary); font-weight: 500 }
+  .site-nav a[aria-current="page"] { background: var(--primary); color: #fff }
+  
+  main { padding: 2rem 3rem; max-width: 1200px }
+  main > h1 { font-size: 2.5rem }
+  
+  .hero { padding: 3rem 2rem; margin-bottom: 2rem }
+  .hero h1 { font-size: 3rem }
+  .hero p { font-size: 1.2rem }
+  
+  .panel { padding: 2rem; margin-bottom: 2rem }
+  .panel h2 { font-size: 1.75rem; margin-bottom: 1.5rem }
+  
+  .cards { grid-template-columns: repeat(3, 1fr); gap: 2rem }
+  .card { box-shadow: 0 2px 8px rgba(16,24,40,0.08) }
+  .card-thumb { height: 220px }
+  .card-body { padding: 1.5rem }
+  
+  .grid-two { grid-template-columns: 2fr 1.2fr }
+  
+  .site-footer { padding: 2rem 3rem }
+  .site-footer p { font-size: 1rem }
+  
+  .btn { padding: 0.75rem 1.5rem; font-size: 1rem }
+  
+  .filters { gap: 1rem; margin-bottom: 1.5rem }
+  .chip { padding: 0.5rem 1.25rem; font-size: 0.95rem }
+  
+  .credits { font-size: 1.1rem; margin-bottom: 1.5rem }
+}

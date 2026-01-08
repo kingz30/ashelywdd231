@@ -1,0 +1,185 @@
+:root {
+  --bg: #f7f9fc;
+  --text: #222222;
+  --primary: #0056b3;
+  --accent: #ff7a00;
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.04);
+  --shadow-md: 0 4px 6px rgba(16,24,40,0.1);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box }
+html, body { height: 100%; margin: 0 }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9f2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+.brand { display: flex; align-items: center; gap: 0.75rem }
+.logo { width: 40px; height: 40px; transition: transform 0.2s }
+.logo:hover { transform: scale(1.05) }
+.site-owner { font-weight: 700; color: var(--text); font-size: 1rem }
+
+.menu-toggle {
+  width: 40px; height: 40px; border: none; background: transparent; position: relative;
+}
+.menu-toggle::before, .menu-toggle::after {
+  content: ""; position: absolute; left: 8px; right: 8px; height: 2px; background: var(--text);
+}
+.menu-toggle::before { top: 14px }
+.menu-toggle::after { top: 24px }
+
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: none }
+.site-nav a { text-decoration: none; color: var(--text); padding: 0.5rem 0.75rem; display: block; border-radius: 6px }
+.site-nav a:focus-visible { outline: 3px solid #99c2ff; outline-offset: 2px }
+.site-nav.open ul { display: block }
+
+main { padding: 1rem; max-width: 1200px; margin: 0 auto }
+main > h1 { font-size: 2rem; margin: 1rem 0 1.5rem 0; color: var(--primary) }
+
+.hero {
+  background: linear-gradient(135deg, var(--primary), #2874d9);
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  margin: 0 0 1.5rem 0;
+  box-shadow: var(--shadow-md);
+}
+.hero h1 { margin: 0 0 0.75rem 0; font-size: 2.5rem; font-weight: 700 }
+.hero p { margin: 0 0 1rem 0; opacity: 0.95; font-size: 1.1rem }
+.hero .cta { display: flex; gap: 0.75rem; flex-wrap: wrap }
+
+.panel { 
+  background: #fff; 
+  border: 1px solid #e5e9f2; 
+  border-radius: var(--radius); 
+  padding: 1.5rem 1rem; 
+  margin: 0 auto 1.5rem; 
+  max-width: 1100px; 
+  box-shadow: var(--shadow-sm); 
+  transition: box-shadow 0.2s;
+}
+.panel:hover { box-shadow: var(--shadow-md) }
+.panel h2 { margin-top: 0; margin-bottom: 1rem; font-size: 1.25rem; color: var(--primary) }
+
+.grid-two { display: grid; gap: 1.5rem }
+.photo-panel { display: grid; place-items: center }
+.profile-photo { 
+  width: 100%; 
+  max-width: 280px; 
+  aspect-ratio: 1 / 1; 
+  object-fit: cover; 
+  border-radius: 12px; 
+  border: 2px solid #e5e9f2; 
+  box-shadow: var(--shadow-md); 
+  transition: transform 0.3s;
+}
+.profile-photo:hover { transform: scale(1.02) }
+
+/* Card Styling - Image Above Title */
+.cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem }
+.card { 
+  display: grid; 
+  grid-template-rows: auto 1fr; 
+  background: #fff; 
+  border: 1px solid #e5e9f2; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  box-shadow: var(--shadow-sm); 
+  transition: all 0.3s; 
+  cursor: pointer;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px) }
+.card-thumb { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid #e5e9f2 }
+.card-body { padding: 1.25rem; display: flex; flex-direction: column }
+.card h3 { margin: 0 0 0.5rem 0; font-size: 1.1rem; font-weight: 600; color: var(--primary) }
+.card p { margin: 0 0 0.5rem 0; font-size: 0.95rem; color: var(--text) }
+.card .meta { color: #6b7280; font-size: 0.85rem; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #e5e9f2 }
+.card.completed { border-left: 4px solid #2e7d32 }
+.card.completed .card-thumb { position: relative }
+.card.completed .card-thumb::after { 
+  content: '✓ Completed'; 
+  position: absolute; 
+  top: 0.75rem; 
+  right: 0.75rem; 
+  background: #2e7d32; 
+  color: #fff; 
+  padding: 0.35rem 0.75rem; 
+  border-radius: 4px; 
+  font-weight: 600; 
+  font-size: 0.8rem;
+}
+
+.resource-list { padding-left: 1.25rem; list-style: disc }
+.resource-list li { margin-bottom: 0.5rem }
+.resource-list a { color: var(--primary); text-decoration: none; font-weight: 500; transition: color 0.2s }
+.resource-list a:hover { color: #004396; text-decoration: underline }
+
+.btn { 
+  display: inline-block; 
+  padding: 0.65rem 1.25rem; 
+  border-radius: 8px; 
+  border: 2px solid var(--primary); 
+  background: var(--primary); 
+  color: #fff; 
+  text-decoration: none; 
+  cursor: pointer; 
+  font-weight: 600; 
+  transition: all 0.2s;
+}
+.btn:hover { background: #004396; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,67,150,0.3) }
+.btn.primary { background: var(--primary); border-color: var(--primary) }
+.btn.secondary { background: #fff; color: var(--primary); border-color: var(--primary) }
+.btn.secondary:hover { background: #f0f3f9; box-shadow: 0 2px 8px rgba(0,67,150,0.15) }
+
+.filters { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap }
+.chip { 
+  border: 1.5px solid #d7dce5; 
+  background: #fff; 
+  color: var(--text); 
+  border-radius: 999px; 
+  padding: 0.4rem 1rem; 
+  cursor: pointer; 
+  font-weight: 500; 
+  transition: all 0.2s;
+}
+.chip:hover { border-color: var(--primary); color: var(--primary) }
+.chip[aria-pressed="true"] { 
+  background: var(--primary); 
+  color: #fff; 
+  border-color: var(--primary); 
+  box-shadow: 0 2px 4px rgba(0,67,150,0.2);
+}
+.credits { font-weight: 600; font-size: 1.05rem; margin-bottom: 1rem }
+.badge { display: inline-block; background: #2e7d32; color: #fff; border-radius: 4px; padding: 0.125rem 0.375rem; font-size: 0.75rem; margin-left: 0.5rem }
+
+.site-footer {
+  background: #ffffff; 
+  border-top: 2px solid #e5e9f2; 
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+.site-footer p { 
+  margin: 0.5rem 0; 
+  font-size: 0.95rem; 
+  color: #6b7280;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
